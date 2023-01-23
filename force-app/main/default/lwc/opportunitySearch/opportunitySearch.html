@@ -1,7 +1,22 @@
 <template>
-    <lightning-input type="text" label="Search for Opportunities by Keyword" value={searchText} onchange={handleSearchText}></lightning-input>
-    <lightning-button label="Search" variant="brand" onclick={searchOpptFromAccount}></lightning-button>
+
+    <div class="search-card slds-grid slds-grid_vertical-align-end slds-m-bottom_medium" >
+        <lightning-input class="slds-col slds-size_2-of-3" type="text" 
+                            label="Search for Opportunities by Keyword : " 
+                            onchange={handleSearchText} 
+                            onkeypress={handleEnter}
+                            placeholder="Your keyword">
+        </lightning-input>
+        <lightning-button class="slds-col slds-size_1-of-3 slds-m-left_medium" 
+                            label="Search" variant="brand"
+                            onclick={searchOpptFromAccount}>
+        </lightning-button>
+    </div>
+
     <lightning-datatable 
-         key-field="id" data={foundOppt}  columns ={cols}>
+        key-field="id" 
+        data={foundOppt}  
+        columns ={cols}>
     </lightning-datatable>
+
 </template>
