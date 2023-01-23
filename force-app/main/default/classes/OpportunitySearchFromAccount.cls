@@ -7,6 +7,7 @@ public with sharing class OpportunitySearchFromAccount {
 
         List<Account> acc = [SELECT ID, (SELECT Id, Name, StageName, CloseDate, Amount FROM Opportunities WHERE Name LIKE :searchText) FROM Account WHERE Id = :accountID];
         for(Account a :acc) {
+            System.debug('a.Opportunities' + a.Opportunities);
             opptList = a.Opportunities;
         }
 

@@ -1,5 +1,7 @@
 <template>
     <lightning-input type="text" label="Search for Opportunities by Keyword" value={searchText} onchange={handleSearchText}></lightning-input>
     <lightning-button label="Search" variant="brand" onclick={searchOpptFromAccount}></lightning-button>
-    <lightning-datatable key-field="id" data={foundOppt} columns ={cols}></lightning-datatable>
+    <lightning-datatable 
+         key-field="id" data={foundOppt}  columns ={cols}>
+    </lightning-datatable>
 </template>
